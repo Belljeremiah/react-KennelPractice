@@ -1,7 +1,73 @@
 {
-    "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Sheperd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle"
+    },
+    {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Sheperd"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "IRL Cannibal ShiaLebouf",
+      "employmentStatus": "Current Hire"
+    },
+    {
+      "id": 2,
+      "name": "Gerald Butlers",
+      "employmentStatus": "New Hire"
+    },
+    {
+      "id": 3,
+      "name": "Don Knotts",
+      "employmentStatus": "Fired"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Doodles House",
+      "address": "605 E Bane Street",
+      "city": "Green Bowling"
+    },
+    {
+      "id": 2,
+      "name": "Decker House",
+      "address": "422 S High Street",
+      "city": "Scottsburg"
+    },
+    {
+      "id": 3,
+      "name": "Esme House",
+      "address": "911 Home Alone Road",
+      "city": "NashVegasVille"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Tim and Erica Doodler",
+      "phoneNumber": 3333333
+    },
+    {
+      "id": 2,
+      "name": "Tanya Coomey",
+      "phoneNumber": 4444444
+    },
+    {
+      "id": 3,
+      "name": "Artist formerly known as Esme",
+      "phoneNumber": 5555555
+    }
+  ]
 }
