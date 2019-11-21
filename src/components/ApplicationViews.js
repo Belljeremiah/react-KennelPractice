@@ -30,10 +30,11 @@ class ApplicationViews extends Component {
           {...props}
           />
         }} />
-        <Route path="/locations" render={(props) => {
+        {/* The exact path operates kind of like a .then and tells the render to go all the way through to the exact path end of the json file instead of just loading a preemptive immature page */}
+        <Route exact path="/locations" render={(props) => {
             return <LocationList />
         }} />
-        <Route path="/locations/:locationsId(\d+)" render={(props) => {
+        <Route path="/locations/:locationId(\d+)" render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)}
           {...props}/>
         }} />
@@ -47,4 +48,4 @@ class ApplicationViews extends Component {
     )
 }}
 
-export default ApplicationViews
+export default ApplicationViews;

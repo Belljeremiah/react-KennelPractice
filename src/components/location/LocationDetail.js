@@ -17,6 +17,7 @@ class LocationDetail extends Component {
     componentDidMount(){
         // Console log to use as a sort of in line debugger to make sure that each method is running and see it in real time on the console
         console.log("LocationDetail: ComponentDidMount");
+        console.log(this.props)
         // LocationManager is going to grab a ref to the object and hold onto it with the id tag unique to it in the database and then set state to it so I can further manipulate it when necessary
         LocationManager.get(this.props.locationId)
         // chaining a .then on to set an anonymous function to run inside cDM to allow state to take a parameter and update its props to state when ran

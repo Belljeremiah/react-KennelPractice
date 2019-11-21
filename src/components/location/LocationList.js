@@ -3,6 +3,7 @@ import LocationCard from './LocationCard'
 import LocationManager from '../../modules/LocationManager';
 
 class LocationList extends Component {
+    // This si where I define State. I will fill it with other methods and components so that it will tell this component what to render
     state = {
         locations: [],
     }
@@ -33,7 +34,7 @@ class LocationList extends Component {
 
     render(){
         console.log("Location LIST: Render");
-
+        console.log(this.state.locations)
         return (
             <div className="container-cards">
                 {this.state.locations.map(location => 
