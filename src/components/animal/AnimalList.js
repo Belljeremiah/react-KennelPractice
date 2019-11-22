@@ -33,11 +33,18 @@
       })
     }
 
-    render(){
+    render() {
         console.log("AnimalList: Render");
         console.log(this.state.animals)
         
         return(
+          <React.Fragment>
+            <section className="section-content">
+              <button type="button" className="btn"
+              onClick={() => {this.props.history.push("/animals/new")}}>
+              Admit Animal
+          </button>
+            </section>
           <div className="container-cards">
             {this.state.animals.map(animal =>
               <AnimalCard 
@@ -45,8 +52,9 @@
               animal={animal} 
               deleteAnimal={this.deleteAnimal}
               />
-            )}
+              )}
           </div>
+        </React.Fragment>
         )
       }
     //   This is the old way of doing this from the first or second exercise use this as a reference for the now working code in how it needed to change.
@@ -59,6 +67,6 @@
     //         </div>
     //     )
     // }
-}
+    }
 
 export default AnimalList;
