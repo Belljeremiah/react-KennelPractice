@@ -35,6 +35,14 @@ class EmployeeList extends Component {
         console.log("EMPLOYEE LIST: Render");
 
         return (
+            <React.Fragment>
+            <section className="section-content">
+                <button type="button"
+                    className="btn"
+                    onClick={() => {this.props.history.push("/employees/new")}}>
+                    New Employee / Rehire
+                </button>
+            </section>
             <div className="container-cards">
                 {this.state.employees.map(employee => <EmployeeCard 
                 key={employee.id} 
@@ -42,6 +50,7 @@ class EmployeeList extends Component {
                 deleteEmployee={this.deleteEmployee}
                 />)}
             </div>
+            </React.Fragment>
         )
     }
 }
