@@ -14,16 +14,6 @@
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull"
-    },
-    {
-      "name": "SnuggleBug",
-      "breed": "Tibetan Mastiff",
-      "id": 4
-    },
-    {
-      "name": "Snookie",
-      "breed": "Snookie",
-      "id": 5
     }
   ],
   "employees": [

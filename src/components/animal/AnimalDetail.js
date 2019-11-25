@@ -9,7 +9,7 @@ class AnimalDetail extends Component {
   state = {
       name: "",
       breed: "",
-      loadingStatus: true,
+      loadingStatus: true
   }
 
   // This is a method that runs to load data from a remote endpoin in the json. in this case animal/id then I set the state to have animal/name animal/breed from json server as well. This also allows for another render to occur and makes for a double invocation fo Render which can lead to errors later on but is used for the exercise instead of constructor()
