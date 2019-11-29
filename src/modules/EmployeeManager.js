@@ -21,5 +21,9 @@ export default {
             },
             body: JSON.stringify(newEmployee)
         }).then(data => data.json())
+    },
+    getWithAnimals(id) {
+        return fetch(`${employeeFetchURL}/employees/${id}?_embed=animals`)
+        .then(result => result.json())
     }
 }

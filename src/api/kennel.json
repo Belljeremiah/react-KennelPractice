@@ -16,14 +16,19 @@
       "breed": "Pitbull"
     },
     {
-      "name": "SnuggleBug",
-      "breed": "Tibetan Mastiff",
+      "address": "123 NuttinFancy",
+      "city": "Placeville",
       "id": 4
     },
     {
-      "name": "Snookie",
-      "breed": "Snookie",
+      "name": "Josephine",
+      "phoneNumber": "8675309",
       "id": 5
+    },
+    {
+      "name": "Worker",
+      "number": "kkkkkkkkkkk",
+      "id": 6
     }
   ],
   "employees": [
@@ -41,6 +46,11 @@
       "id": 3,
       "name": "Don Knotts",
       "employmentStatus": "Fired"
+    },
+    {
+      "name": "Mr Tibs",
+      "employmentStatus": "Hired",
+      "id": 4
     }
   ],
   "locations": [
@@ -61,6 +71,12 @@
       "name": "Esme House",
       "address": "911 Home Alone Road",
       "city": "NashVegasVille"
+    },
+    {
+      "name": "Fudge House",
+      "address": "555 Fudge Street",
+      "city": "Fudgeville, USA",
+      "id": 4
     }
   ],
   "owners": [
@@ -78,6 +94,11 @@
       "id": 3,
       "name": "Artist formerly known as Esme",
       "phoneNumber": 5555555
+    },
+    {
+      "name": "blah",
+      "number": "blah",
+      "id": 4
     }
   ]
 }
