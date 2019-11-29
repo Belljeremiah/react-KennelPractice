@@ -7,10 +7,19 @@ export default {
     getAllOwners() {
         return fetch(`${ownerFetchURL}/owners`).then(result => result.json())
     },
-    delete(id) {
+    deleteOwner(id) {
         return fetch(`http://localhost:5002/owners/${id}`, {
             method: "DELETE"
         })
         .then(result => result.json())
+    },
+    post(newOwner) {
+        return fetch(`${ownerFetchURL}/owners`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newOwner)
+        }).then(data => data.json())
     }
 }

@@ -17,6 +17,7 @@ import EmployeeForm from "./employee/EmployeeForm"
 import LocationForm from "./location/LocationForm"
 import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
 import OwnerDetail from "./owner/OwnerDetail"
+import OwnerForm from "./owner/OwnerForm"
 
 // THis is the first set class for displaying on the dom. It functions as a COMPONENT which is a method that I have pulled from React native. By extending the props of Component from React to ApplicationViews as a class/object I can utilize the premade functions and methods inside of Component inside of React.
 class ApplicationViews extends Component {
@@ -91,6 +92,11 @@ class ApplicationViews extends Component {
 
         <Route path="/owners/:ownerId(\d+)" render={(props) => {
           return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} {...props}/>
+        }} />
+
+        {/* Route Path for creating New owners page or displaying it */}
+        <Route path="/owners/new" render={(props) => {
+          return <OwnerForm {...props} />
         }} />
 
         {/* Route path for get Animals with Employees which will be an embed that allows for a fetch call that returns both */}
