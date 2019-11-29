@@ -22,9 +22,9 @@ class EmployeeWithAnimals extends Component {
     render(){
         return (
           <div className="card">
-            <h3>Employee: {this.state.employee.name}</h3>
-            <small>Employment Status: {this.state.employee.employmentStatus}</small>
-
+            <h2>Employee: {this.state.employee.name}</h2>
+            <h3>Employment Status: {this.state.employee.employmentStatus}</h3>
+            <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Fire!</button>
             {this.state.animals.map(animal =>
               <AnimalCard
                 key={animal.id}

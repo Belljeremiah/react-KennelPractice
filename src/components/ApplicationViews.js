@@ -16,6 +16,7 @@ import AnimalEditForm from './animal/AnimalEditForm'
 import EmployeeForm from "./employee/EmployeeForm"
 import LocationForm from "./location/LocationForm"
 import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
+import OwnerDetail from "./owner/OwnerDetail"
 
 // THis is the first set class for displaying on the dom. It functions as a COMPONENT which is a method that I have pulled from React native. By extending the props of Component from React to ApplicationViews as a class/object I can utilize the premade functions and methods inside of Component inside of React.
 class ApplicationViews extends Component {
@@ -47,6 +48,7 @@ class ApplicationViews extends Component {
           {...props}
           />
         }} />
+        
         {/* the (\d+)/edit allows for the edit path I have set up and passes the spread operator seperates out the passed props into useable sections it also iterates through the array */}
         <Route
           path="/animals/:animalId(\d+)/edit" render={props => {
@@ -61,7 +63,7 @@ class ApplicationViews extends Component {
         
         {/* These are for the Locations */}
         <Route exact path="/locations" render={(props) => {
-            return <LocationList />
+            return <LocationList {...props}/>
         }} />
         
         <Route path="/locations/:locationId(\d+)" render={(props) => {
@@ -83,8 +85,12 @@ class ApplicationViews extends Component {
         }} />
         
         {/* This is my route path for Owners It still lacks delete functionality and creation functionality. And Edit... I suck but I am trying. */}
-        <Route path="/owners" render={(props) => {
-            return <OwnerList />
+        <Route exact path="/owners" render={(props) => {
+            return <OwnerList {...props} />
+        }} />
+
+        <Route path="/owners/:ownerId(\d+)" render={(props) => {
+          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} {...props}/>
         }} />
 
         {/* Route path for get Animals with Employees which will be an embed that allows for a fetch call that returns both */}

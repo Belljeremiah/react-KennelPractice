@@ -55,7 +55,7 @@ render(){
                         required
                         onChange={this.handleFieldChange}
                         id="address"
-                        placeholder="address"
+                        placeholder="Address"
                         />
                         <label htmlFor="address">Address</label>
                         <input
@@ -63,14 +63,15 @@ render(){
                         required
                         onChange={this.handleFieldChange}
                         id="city"
-                        placeholder="city"
+                        placeholder="City"
                         />
+                        <label htmlFor="city">City</label>
                     </div>
                     <div className="alignRight">
                         <button
                         type="button"
                         disabled={this.state.loadingStatus}
-                        onClick={this.constructNewAnimal}
+                        onClick={this.makeNewLocation}
                         >Submit</button>
                 </div>
             </fieldset>

@@ -33,7 +33,7 @@ class OwnerList extends Component {
 
     render(){
         console.log("OWNER LIST: Render");
-
+        console.log(this.state.owners)
         return (
             <div className="container-cards">
                 {this.state.owners.map(owner => 
@@ -41,6 +41,7 @@ class OwnerList extends Component {
                 key={owner.id} 
                 owner={owner} 
                 deleteOwner={this.deleteOwner}
+                {...this.props}
                 />)}
             </div>
         )
