@@ -46,7 +46,7 @@
           </button>
             </section>
           <div className="container-cards">
-            {this.state.animals.map(animal =>
+            {this.state.animals.map((animal) =>
               <AnimalCard 
               key={animal.id} 
               animal={animal} 

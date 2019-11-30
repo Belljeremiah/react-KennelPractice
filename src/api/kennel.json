@@ -14,21 +14,6 @@
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull"
-    },
-    {
-      "address": "123 NuttinFancy",
-      "city": "Placeville",
-      "id": 4
-    },
-    {
-      "name": "Josephine",
-      "phoneNumber": "8675309",
-      "id": 5
-    },
-    {
-      "name": "Worker",
-      "number": "kkkkkkkkkkk",
-      "id": 6
     }
   ],
   "employees": [

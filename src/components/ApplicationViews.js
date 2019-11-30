@@ -1,5 +1,5 @@
 // Similar to how our Main.JS was used for nutshell and other applications Application View is where we actually call or set the users view of the application in each new state. Simple imports pull the data from the other modules and populate it together in established methods. Using Render to set the final output.
-import { Route, Redirect } from "react-router-dom"
+import { Route, Redirect, withRouter } from "react-router-dom"
 import React, { Component } from 'react'
 import Home from './home/Home'
 //only include these once they are built - previous practice exercise
@@ -64,7 +64,11 @@ class ApplicationViews extends Component {
         
         {/* These are for the Locations */}
         <Route exact path="/locations" render={(props) => {
+            if (this.isAuthenticated()) {
             return <LocationList {...props}/>
+            } else { 
+            return <Redirect to="/login" />
+            }
         }} />
         
         <Route path="/locations/:locationId(\d+)" render={(props) => {
@@ -78,7 +82,11 @@ class ApplicationViews extends Component {
         
         {/* These are my routers for the Employees Module */}
         <Route exact path="/employees" render={(props) => {
-            return <EmployeeList {...props} />
+            if (this.isAuthenticated()) {
+              return <EmployeeList {...props} />
+            } else {
+              return <Redirect to="/login" />
+            }
         }} />
 
         <Route path="/employees/new" render={(props) => {
@@ -87,7 +95,11 @@ class ApplicationViews extends Component {
         
         {/* This is my route path for Owners It still lacks delete functionality and creation functionality. And Edit... I suck but I am trying. */}
         <Route exact path="/owners" render={(props) => {
-            return <OwnerList {...props} />
+            if (this.isAuthenticated()) {
+              return <OwnerList {...props} />
+            } else { 
+              return <Redirect to="/login" />
+            }
         }} />
 
         <Route path="/owners/:ownerId(\d+)" render={(props) => {
@@ -105,7 +117,8 @@ class ApplicationViews extends Component {
         }} />
         
         {/* Route Path for login functionality routes for URL to login screen Need Regex */}
-        <Route path="/login" component={Login} />
+        <Route exact path="/login" component={Login} />
+        {/* So This is an exact copy of the working code line for current login. I am trying to refactor this to run an if else statement so that when login is submitted the user is redirected to the Home page. */}
       {/* This is the React.Fragment wrappers closing tag which allows all of these Routers to function it can also be writeen as <></> but has some limitations in that form. Specifically use of attributes classes */}
       </React.Fragment>
     )
