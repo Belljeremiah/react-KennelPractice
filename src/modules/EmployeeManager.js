@@ -25,5 +25,14 @@ export default {
     getWithAnimals(id) {
         return fetch(`${employeeFetchURL}/employees/${id}?_embed=animals`)
         .then(result => result.json())
+    },
+    update(editedEmployee) {
+        return fetch(`${employeeFetchURL}/employees/${editedEmployee.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedEmployee)
+        }).then(data => data.json());
     }
 }

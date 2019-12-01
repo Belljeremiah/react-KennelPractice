@@ -18,6 +18,7 @@ import LocationForm from "./location/LocationForm"
 import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
 import OwnerDetail from "./owner/OwnerDetail"
 import OwnerForm from "./owner/OwnerForm"
+import EmployeeEditForm from "./employee/EmployeeEditForm"
 
 // THis is the first set class for displaying on the dom. It functions as a COMPONENT which is a method that I have pulled from React native. By extending the props of Component from React to ApplicationViews as a class/object I can utilize the premade functions and methods inside of Component inside of React.
 class ApplicationViews extends Component {
@@ -115,10 +116,24 @@ class ApplicationViews extends Component {
         <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
           return <EmployeeWithAnimals {...props} />
         }} />
+
+        {/* Edit Route path for Employees */}
+        <Route path="employees/:employeeId(\d+)/edit" render={(props) => {
+          return <EmployeeEditForm {...props} />
+        }} />
         
-        {/* Route Path for login functionality routes for URL to login screen Need Regex */}
         <Route exact path="/login" component={Login} />
-        {/* So This is an exact copy of the working code line for current login. I am trying to refactor this to run an if else statement so that when login is submitted the user is redirected to the Home page. */}
+        {/* Route Path for login functionality routes for URL to login screen Need Regex */}
+        {/* <Route exact path="/login" render={(props) => {
+          if (this.isAuthenitcated()) {
+          return <Home {...props}/>
+        } else {
+         return <Login component={Login} />
+        }
+        }} /> */}
+        {/* So This is an exact copy of the working code line for current login. I am trying to refactor this to run an if else statement so that when login is submitted the user is redirected to the Home page.
+        <Route exact path="/login" component={Login} />
+        Use this copy if you completely jack this up. */}
       {/* This is the React.Fragment wrappers closing tag which allows all of these Routers to function it can also be writeen as <></> but has some limitations in that form. Specifically use of attributes classes */}
       </React.Fragment>
     )
