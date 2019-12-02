@@ -1,5 +1,5 @@
 // Similar to how our Main.JS was used for nutshell and other applications Application View is where we actually call or set the users view of the application in each new state. Simple imports pull the data from the other modules and populate it together in established methods. Using Render to set the final output.
-import { Route, Redirect, withRouter } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"
 import React, { Component } from 'react'
 import Home from './home/Home'
 //only include these once they are built - previous practice exercise
@@ -81,6 +81,24 @@ class ApplicationViews extends Component {
           return <LocationForm {...props} />
         }} />
         
+        {/* This is my route path for Owners It still lacks delete functionality and creation functionality. And Edit... I suck but I am trying. */}
+        <Route exact path="/owners" render={(props) => {
+          if (this.isAuthenticated()) {
+            return <OwnerList {...props} />
+          } else { 
+            return <Redirect to="/login" />
+          }
+        }} />
+
+        <Route path="/owners/:ownerId(\d+)" render={(props) => {
+          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} {...props}/>
+        }} />
+
+        {/* Route Path for creating New owners page or displaying it */}
+        <Route path="/owners/new" render={(props) => {
+          return <OwnerForm {...props} />
+        }} />
+
         {/* These are my routers for the Employees Module */}
         <Route exact path="/employees" render={(props) => {
             if (this.isAuthenticated()) {
@@ -94,24 +112,6 @@ class ApplicationViews extends Component {
           return <EmployeeForm {...props} />
         }} />
         
-        {/* This is my route path for Owners It still lacks delete functionality and creation functionality. And Edit... I suck but I am trying. */}
-        <Route exact path="/owners" render={(props) => {
-            if (this.isAuthenticated()) {
-              return <OwnerList {...props} />
-            } else { 
-              return <Redirect to="/login" />
-            }
-        }} />
-
-        <Route path="/owners/:ownerId(\d+)" render={(props) => {
-          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} {...props}/>
-        }} />
-
-        {/* Route Path for creating New owners page or displaying it */}
-        <Route path="/owners/new" render={(props) => {
-          return <OwnerForm {...props} />
-        }} />
-
         {/* Route path for get Animals with Employees which will be an embed that allows for a fetch call that returns both */}
         <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
           return <EmployeeWithAnimals {...props} />
