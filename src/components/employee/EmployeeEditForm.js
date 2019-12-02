@@ -29,9 +29,10 @@ class EmployeeEditForm extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
+        console.log("Employee Edit Form: cDM ran!")
+        console.log(this.props.match.params.employeeId)
       EmployeeManager.get(this.props.match.params.employeeId)
-      .then(employee => {
+      .then((employee) => {
           this.setState({
             employeeName: employee.name,
             status: employee.employmentStatus,
@@ -41,7 +42,8 @@ class EmployeeEditForm extends Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log("Employee Edit Render Ran")
+        debugger
       return (
         <>
         <form>

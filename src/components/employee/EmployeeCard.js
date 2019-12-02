@@ -11,7 +11,7 @@ class EmployeeCard extends Component {
           <button type="button"
           onClick={() => {this.props.history.push(`/employees/${this.props.employee.id}/details`) }}>Details</button>
           <button type="button"
-           onClick={() => {this.props.history.push(`/employees/${this.props.employee.id}/edit`) }}>Edit</button>    
+           onClick={() => {this.props.history.push(`/employees/${this.props.employee.id}/edit`)}}>Edit</button>    
         </div>
       </div>
     );
@@ -19,3 +19,5 @@ class EmployeeCard extends Component {
 }
 
 export default EmployeeCard;
+
+// <button type="button" onClick={() => {this.props.history.push(`/animals/${this.props.animal.id}/edit`)}}>Edit</button>
